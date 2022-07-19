@@ -7,12 +7,24 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>Welded Beam</h1>
-      <h2>Beam data</h2>
-      <div className='beam-data'>
-        <Form setProperties={setProperties} />
+      <div className='header'>
+        <h1>Welded Beam</h1>
+        <a
+          className='text-lg'
+          href='https://carlos-londono.dev/'
+          target='_blank'
+          rel='noreferrer'
+        >
+          by <span>carlos-londono.dev</span>
+        </a>
+        <h2>Beam data</h2>
+      </div>
+      <div className='beam-layout'>
         <div className='beam-image'>
           <img src={beam_I_W} alt='beam-image' />
+        </div>
+        <div className='beam-data'>
+          <Form setProperties={setProperties} />
         </div>
       </div>
     </div>
