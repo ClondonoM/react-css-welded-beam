@@ -2,3 +2,11 @@
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
+
+.beam-data {
+  display: flex;
+}
+
+.beam-image img {
+  width: 200px;
+}
