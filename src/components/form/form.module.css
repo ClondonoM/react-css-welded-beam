@@ -1,16 +1,16 @@
-.form-input {
+.formInput {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
 }
 
-.form-input label {
+.formInput label {
   margin-bottom: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
 }
 
-.form-input input {
+.formInput input {
   padding: 0.3rem;
   border: 2px solid var(--color-primary);
   font-size: 1rem;
@@ -18,7 +18,7 @@
   border-radius: 3px;
 }
 
-.form-button {
+.formButton {
   display: flex;
   justify-content: center;
   margin: 1rem auto;
@@ -36,9 +36,13 @@
 }
 
 @media (hover: hover) {
-  .form-button:hover {
+  .formButton:hover {
     cursor: pointer;
-    background-color: var(--color-primary);
-    color: #fff;
   }
+}
+
+.formButton:active {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 2px solid #fff;
 }

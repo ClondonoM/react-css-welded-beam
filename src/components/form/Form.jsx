@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './form.css';
+import styles from './form.module.css';
 
 const Form = () => {
   const [h, setH] = useState(400);
@@ -33,7 +33,7 @@ const Form = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div className='form-input'>
+        <div className={styles.formInput}>
           <label htmlFor='h'>Beam heigth (h) (mm) </label>
           <input
             type='number'
@@ -41,7 +41,7 @@ const Form = () => {
             onChange={(e) => setH(e.target.value * 1)}
           />
         </div>
-        <div className='form-input'>
+        <div className={styles.formInput}>
           <label htmlFor='tw'>Web thickness (tw) (mm) </label>
           <input
             type='number'
@@ -49,7 +49,7 @@ const Form = () => {
             onChange={(e) => setTw(e.target.value * 1)}
           />
         </div>
-        <div className='form-input'>
+        <div className={styles.formInput}>
           <label htmlFor='tfw'>Top flange width (tfw) (mm) </label>
           <input
             type='number'
@@ -57,7 +57,7 @@ const Form = () => {
             onChange={(e) => setTfw(e.target.value * 1)}
           />
         </div>
-        <div className='form-input'>
+        <div className={styles.formInput}>
           <label htmlFor='tft'>Top flange thickness (tft) (mm) </label>
           <input
             type='number'
@@ -66,7 +66,7 @@ const Form = () => {
           />
         </div>
 
-        <div className='form-input'>
+        <div className={styles.formInput}>
           <label htmlFor='bfw'>Bottom flange width (bfw) (mm) </label>
           <input
             type='number'
@@ -75,7 +75,7 @@ const Form = () => {
           />
         </div>
 
-        <div className='form-input'>
+        <div className={styles.formInput}>
           <label htmlFor='bft'>Bottom flange thickness (bft) (mm) </label>
           <input
             type='number'
@@ -83,7 +83,7 @@ const Form = () => {
             onChange={(e) => setTft(e.target.value * 1)}
           />
         </div>
-        <input className='form-button' type='submit' value='Calculate' />
+        <input className={styles.formButton} type='submit' value='Calculate' />
       </form>
     </div>
   );

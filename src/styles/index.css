@@ -1,0 +1,11 @@
+@import './normalize.css';
+
+:root {
+  --color-primary: #086715;
+  --color-secondary: #00b6ff;
+  --color-alternative: #009ed3;
+}
+
+body {
+  background-color: #d7f4ff;
+}
