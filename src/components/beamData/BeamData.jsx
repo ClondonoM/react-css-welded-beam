@@ -2,7 +2,7 @@ import Form from '../form/Form';
 import beam_I_W from '../../assets/beam_I_W.png';
 import styles from './beamData.module.css';
 
-const BeamData = ({ setProperties }) => {
+const BeamData = ({ setBeamProperties }) => {
   return (
     <div className={styles.containerData}>
       <div>
@@ -10,7 +10,7 @@ const BeamData = ({ setProperties }) => {
       </div>
       <div className={styles.container}>
         <div className={styles.beamData}>
-          <Form setProperties={setProperties} />
+          <Form setBeamProperties={setBeamProperties} />
         </div>
         <div className={styles.beamImage}>
           <img src={beam_I_W} alt='beam' />

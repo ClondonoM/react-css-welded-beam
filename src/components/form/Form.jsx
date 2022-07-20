@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './form.module.css';
 
-const Form = ({ setProperties }) => {
+const Form = ({ setBeamProperties }) => {
   const [h, setH] = useState(400);
   const [tw, setTw] = useState(9);
   const [tfw, setTfw] = useState(150);
@@ -17,7 +17,7 @@ const Form = ({ setProperties }) => {
       botF: { w: bfw, t: bft },
     };
 
-    setProperties(beam);
+    setBeamProperties(beam);
   };
 
   return (
@@ -29,7 +29,7 @@ const Form = ({ setProperties }) => {
             type='number'
             value={h}
             onChange={(e) => setH(e.target.value * 1)}
-          />
+          />{' '}
         </div>
         <div className={styles.formInput}>
           <label htmlFor='tw'>Web thickness (tw) (mm) </label>
@@ -70,7 +70,7 @@ const Form = ({ setProperties }) => {
           <input
             type='number'
             value={bft}
-            onChange={(e) => setTft(e.target.value * 1)}
+            onChange={(e) => setBft(e.target.value * 1)}
           />
         </div>
         <input className={styles.formButton} type='submit' value='Calculate' />

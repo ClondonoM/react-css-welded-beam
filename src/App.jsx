@@ -4,21 +4,21 @@ import BeamData from './components/beamData/BeamData.jsx';
 import BeamResults from './components/beamResults/BeamResults.jsx';
 
 function App() {
-  const [properties, setProperties] = useState({});
-
-  console.log('desde app', properties);
+  const [beamproperties, setBeamProperties] = useState({});
 
   return (
     <>
       <div className={styles.header}>
-        <h1>Welded Beam</h1>
+        <h1>I Shape Welded Beam</h1>
+      </div>
+      <div className={styles.container}>
+        <BeamData setBeamProperties={setBeamProperties} />
+        <BeamResults beamproperties={beamproperties} />
+      </div>
+      <div className={styles.footer}>
         <a href='https://carlos-londono.dev/' target='_blank' rel='noreferrer'>
           by <span>carlos-londono.dev</span>
         </a>
-      </div>
-      <div className={styles.container}>
-        <BeamData setProperties={setProperties} />
-        <BeamResults properties={properties} />
       </div>
     </>
   );

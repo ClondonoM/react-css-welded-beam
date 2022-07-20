@@ -1,5 +1,14 @@
 .containerResults {
   display: block;
+  font-weight: 600;
+  padding-left: 1rem;
+}
+
+.containerResults h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
 }
 
 .container {
@@ -10,6 +19,6 @@
 
 .beamResults {
   display: flex;
-  margin: 0.5rem 1rem;
-  padding: 0.5rem;
+  margin: 0 1rem;
+  padding: 0.1rem;
 }

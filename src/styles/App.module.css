@@ -4,15 +4,23 @@
   align-items: center;
 }
 
-.header a {
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer a {
   text-decoration: none;
   color: #000;
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
-.header span {
+.footer span {
   font-weight: 700;
   color: var(--color-primary);
 }
