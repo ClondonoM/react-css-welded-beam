@@ -1,6 +1,5 @@
 const SheetWaste = ({ beamproperties }) => {
   const { botF, topF, web } = beamproperties;
-  console.log(botF, topF, web);
   const botFW = topF === undefined ? 0 : botF.w;
   const topFW = botF === undefined ? 0 : topF.w;
   const webW = web === undefined ? 0 : web.w;
