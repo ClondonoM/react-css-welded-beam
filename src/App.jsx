@@ -4,7 +4,9 @@ import BeamData from './components/beamData/BeamData.jsx';
 import BeamResults from './components/beamResults/BeamResults.jsx';
 
 function App() {
-  const [properties, setProperties] = useState([]);
+  const [properties, setProperties] = useState({});
+
+  console.log('desde app', properties);
 
   return (
     <>
@@ -15,8 +17,8 @@ function App() {
         </a>
       </div>
       <div className={styles.container}>
-        <BeamData />
-        <BeamResults />
+        <BeamData setProperties={setProperties} />
+        <BeamResults properties={properties} />
       </div>
     </>
   );

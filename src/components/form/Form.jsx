@@ -1,33 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import styles from './form.module.css';
 
-const Form = () => {
+const Form = ({ setProperties }) => {
   const [h, setH] = useState(400);
   const [tw, setTw] = useState(9);
   const [tfw, setTfw] = useState(150);
   const [tft, setTft] = useState(12);
   const [bfw, setBfw] = useState(170);
   const [bft, setBft] = useState(15);
-  // useEffect(() => {}, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const beam = {
+      topF: { w: tfw, t: tft },
+      web: { w: h - tft - bft, t: tw },
+      botF: { w: bfw, t: bft },
+    };
 
-    console.log(
-      'h: ',
-      h,
-      'tw: ',
-      'tw: ',
-      tw,
-      'tfw: ',
-      tfw,
-      'tft: ',
-      tft,
-      'bfw: ',
-      bfw,
-      'bft: ',
-      bft
-    );
+    setProperties(beam);
   };
 
   return (
