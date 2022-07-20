@@ -1,0 +1,15 @@
+.containerResults {
+  display: block;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.beamResults {
+  display: flex;
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+}

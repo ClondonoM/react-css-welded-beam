@@ -17,28 +17,8 @@
   color: var(--color-primary);
 }
 
-.beamLayout {
+.container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-.beamData {
-  display: flex;
-  margin: 0.5rem 1rem;
-  padding: 0.5rem;
-}
-
-.beamImage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  display: flex;
-  margin: 0.5rem 1rem;
-  padding: 0.5rem;
-}
-
-.beamImage img {
-  width: 180px;
 }
