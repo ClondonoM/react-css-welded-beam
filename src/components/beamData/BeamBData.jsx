@@ -1,8 +1,8 @@
-import FormI from '../forms/FormI';
+import FormI from '../forms/FormB';
 import beam_I_W from '../../assets/beam_I_W.png';
 import styles from './beamData.module.css';
 
-const BeamData = ({ setBeamProperties }) => {
+const BeamIData = ({ setBeamIProperties }) => {
   return (
     <div className={styles.containerData}>
       <div>
@@ -10,7 +10,7 @@ const BeamData = ({ setBeamProperties }) => {
       </div>
       <div className={styles.container}>
         <div className={styles.beamData}>
-          <FormI setBeamProperties={setBeamProperties} />
+          <FormI setBeamIProperties={setBeamIProperties} />
         </div>
         <div className={styles.beamImage}>
           <img src={beam_I_W} alt='beam' />
@@ -20,4 +20,4 @@ const BeamData = ({ setBeamProperties }) => {
   );
 };
 
-export default BeamData;
+export default BeamIData;

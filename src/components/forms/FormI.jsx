@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './form.module.css';
 
-const Form = ({ setBeamProperties }) => {
+const FormI = ({ setBeamIProperties }) => {
   const [h, setH] = useState(400);
   const [tw, setTw] = useState(9);
   const [tfw, setTfw] = useState(150);
@@ -17,7 +17,7 @@ const Form = ({ setBeamProperties }) => {
       botF: { w: bfw, t: bft },
     };
 
-    setBeamProperties(beam);
+    setBeamIProperties(beam);
   };
 
   return (
@@ -79,4 +79,4 @@ const Form = ({ setBeamProperties }) => {
   );
 };
 
-export default Form;
+export default FormI;
