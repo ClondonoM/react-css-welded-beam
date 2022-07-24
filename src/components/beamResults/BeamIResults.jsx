@@ -1,18 +1,9 @@
 import styles from './beamResults.module.css';
-import SheetWaste from './SheetWaste';
+import SheetWasteI from './SheetWasteI';
 
-const BeamResults = ({ beamproperties }) => {
-  // const area = () => {
-  //   let prop = '';
-  //   let a = 0;
-  //   for (prop in beamproperties) {
-  //     a += beamproperties[prop].t * beamproperties[prop].w;
-  //   }
-  //   return a;
-  // };
-
+const BeamIResults = ({ beamIProperties }) => {
   const steel = 7850;
-  const { botF, topF, web } = beamproperties;
+  const { botF, topF, web } = beamIProperties;
   const areaTopF = topF === undefined ? 0 : topF.w * topF.t;
   const areaBotF = botF === undefined ? 0 : botF.w * botF.t;
   const areaWeb = web === undefined ? 0 : web.w * web.t;
@@ -58,11 +49,11 @@ const BeamResults = ({ beamproperties }) => {
         {topF === undefined ? (
           ''
         ) : (
-          <SheetWaste beamproperties={beamproperties} />
+          <SheetWasteI beamIProperties={beamIProperties} />
         )}
       </div>
     </div>
   );
 };
 
-export default BeamResults;
+export default BeamIResults;

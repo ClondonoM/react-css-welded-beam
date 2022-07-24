@@ -1,5 +1,5 @@
-const SheetWaste = ({ beamproperties }) => {
-  const { botF, topF, web } = beamproperties;
+const SheetWasteI = ({ beamIProperties }) => {
+  const { botF, topF, web } = beamIProperties;
   const botFW = topF === undefined ? 0 : botF.w;
   const topFW = botF === undefined ? 0 : topF.w;
   const webW = web === undefined ? 0 : web.w;
@@ -20,4 +20,4 @@ const SheetWaste = ({ beamproperties }) => {
   );
 };
 
-export default SheetWaste;
+export default SheetWasteI;
