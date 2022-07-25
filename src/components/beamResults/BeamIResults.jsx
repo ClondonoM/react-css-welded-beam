@@ -19,8 +19,8 @@ const BeamIResults = ({ beamIProperties }) => {
         <h2>Results</h2>
       </div>
       <div className={styles.containerResults}>
-        <p>Total Area (mm2) = {areaBeam.toFixed(0)}</p>
-        <p>Total Area (m2) = {(areaBeam / 1000000).toFixed(8)}</p>
+        <p>Cross-Section Area (mm2) = {areaBeam.toFixed(0)}</p>
+        <p>Cross-Section Area (m2) = {(areaBeam / 1000000).toFixed(8)}</p>
         <p>Total Weight (kg/m) = {totalWeight}</p>
         <p>
           Top Flange Weight (kg/m) = {topFWeight}
