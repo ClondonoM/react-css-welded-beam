@@ -9,6 +9,7 @@ const FormB = ({ setBeamBProperties }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const beam = {
       flange: { w: fw, t: ft },
       web: { w: h - 2 * ft, t: tw },
