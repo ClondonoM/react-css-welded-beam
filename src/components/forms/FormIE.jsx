@@ -1,21 +1,20 @@
 import { useState } from 'react';
 import styles from './form.module.css';
 
-const FormB = ({ setBeamBProperties }) => {
-  const [h, setH] = useState(500);
+const FormIE = ({ setBeamIEProperties }) => {
+  const [h, setH] = useState(400);
   const [tw, setTw] = useState(9);
-  const [fw, setFw] = useState(300);
-  const [ft, setFt] = useState(15);
+  const [fw, setFw] = useState(150);
+  const [ft, setFt] = useState(12);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const beam = {
       flange: { w: fw, t: ft },
       web: { w: h - 2 * ft, t: tw },
     };
 
-    setBeamBProperties(beam);
+    setBeamIEProperties(beam);
   };
 
   return (
@@ -60,4 +59,4 @@ const FormB = ({ setBeamBProperties }) => {
   );
 };
 
-export default FormB;
+export default FormIE;
