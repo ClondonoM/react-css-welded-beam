@@ -5,7 +5,7 @@ const BeamIEResults = ({ beamIEProperties }) => {
   const steel = 7850;
   const { flange, web } = beamIEProperties;
   const areaFlange = flange === undefined ? 0 : 2 * flange.w * flange.t;
-  const areaWeb = web === undefined ? 0 : 2 * web.w * web.t;
+  const areaWeb = web === undefined ? 0 : web.w * web.t;
   const areaBeam = areaFlange + areaWeb;
   const totalWeight = ((areaBeam / 1000000) * steel).toFixed(2);
   const flangeWeight = ((areaFlange / 1000000) * steel).toFixed(2);
