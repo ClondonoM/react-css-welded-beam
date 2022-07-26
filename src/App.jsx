@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <div className={styles.header}>
-        <h1>Equal Flanges I Shape Welded Beam</h1>
+        <h1>Equal Flanges Welded Plate Girder</h1>
       </div>
       <div className={styles.container}>
         <BeamIEData setBeamIEProperties={setBeamIEProperties} />
@@ -23,7 +23,7 @@ function App() {
       </div>
       <hr />
       <div className={styles.header}>
-        <h1>I Shape Welded Beam</h1>
+        <h1>Welded Plate Girder</h1>
       </div>
       <div className={styles.container}>
         <BeamIData setBeamIProperties={setBeamIProperties} />
@@ -31,7 +31,7 @@ function App() {
       </div>
       <hr />
       <div className={styles.header}>
-        <h1>Box Shape Welded Beam</h1>
+        <h1>Welded Box Girder</h1>
       </div>
       <div className={styles.container}>
         <BeamBData setBeamBProperties={setBeamBProperties} />
