@@ -1,14 +1,23 @@
 import styles from './beamResults.module.css';
 import SheetWasteIE from './SheetWasteIE';
+import inertiaBeamIE from '../inertia/inertiaBeamIE';
 
 const BeamIEResults = ({ beamIEProperties }) => {
   const steel = 7850;
   const { flange, web } = beamIEProperties;
-  const areaFlange = flange === undefined ? 0 : 2 * flange.w * flange.t;
-  const areaWeb = web === undefined ? 0 : web.w * web.t;
-  const areaBeam = areaFlange + areaWeb;
+
+  // if (flange) {
+  // }
+  const wbf = flange === undefined ? 0 : flange.w;
+  const tbf = flange === undefined ? 0 : flange.t;
+  const hw = flange === undefined ? 0 : web.w;
+  const tw = flange === undefined ? 0 : web.t;
+
+  const areaFB = wbf * tbf;
+  const areaWeb = hw * tw;
+  const areaBeam = 2 * areaFB + areaWeb;
   const totalWeight = ((areaBeam / 1000000) * steel).toFixed(2);
-  const flangeWeight = ((areaFlange / 1000000) * steel).toFixed(2);
+  const flangeWeight = (((2 * areaFB) / 1000000) * steel).toFixed(2);
   const webWeight = ((areaWeb / 1000000) * steel).toFixed(2);
 
   return (
