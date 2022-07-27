@@ -5,14 +5,10 @@ import inertiaBeamIE from '../inertia/inertiaBeamIE';
 const BeamIEResults = ({ beamIEProperties }) => {
   const steel = 7850;
   const { flange, web } = beamIEProperties;
-
-  // if (flange) {
-  // }
   const wbf = flange === undefined ? 0 : flange.w;
   const tbf = flange === undefined ? 0 : flange.t;
-  const hw = flange === undefined ? 0 : web.w;
-  const tw = flange === undefined ? 0 : web.t;
-
+  const hw = web === undefined ? 0 : web.w;
+  const tw = web === undefined ? 0 : web.t;
   const areaFB = wbf * tbf;
   const areaWeb = hw * tw;
   const areaBeam = 2 * areaFB + areaWeb;
@@ -20,6 +16,7 @@ const BeamIEResults = ({ beamIEProperties }) => {
   const flangeWeight = (((2 * areaFB) / 1000000) * steel).toFixed(2);
   const webWeight = ((areaWeb / 1000000) * steel).toFixed(2);
 
+  flange && inertiaBeamIE(hw, tw, wbf, tbf);
   return (
     <div className={styles.containerResults}>
       <div>

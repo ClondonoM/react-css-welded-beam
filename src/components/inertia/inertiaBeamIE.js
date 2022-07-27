@@ -1,4 +1,21 @@
 const inertiaBeamIE = (hw, tw, fw, ft) => {
-  console.log(hw, tw, fw, ft);
+  const areaFB = fw * ft;
+  const areaWeb = hw * tw;
+  const areaBeam = 2 * areaFB + areaWeb;
+  // console.log('areaFB, areaWeb, areaBeam');
+  // console.log(2 * areaFB, areaWeb, areaBeam);
+  const ybf = ft / 2;
+  const yhw = hw / 2 + ft;
+  const ytf = ft / 2 + ft + hw;
+  const mbf = areaFB * ybf;
+  const mw = areaWeb * yhw;
+  const mbt = areaFB * ytf;
+  const sumM = mbf + mw + mbt;
+  const iybf = areaFB * Math.pow(ybf, 2);
+  const iyw = areaWeb * Math.pow(yhw, 2);
+  const iytf = areaFB * Math.pow(ytf, 2);
+  const sumIy = iybf + iyw + iytf;
+  console.log('iybf, iyw, iytf, sumIy');
+  console.log(iybf, iyw, iytf, sumIy);
 };
 export default inertiaBeamIE;
