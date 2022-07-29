@@ -9,6 +9,7 @@ const BeamIEResults = ({ beamIEProperties }) => {
   const tbf = flange === undefined ? 0 : flange.t;
   const hw = web === undefined ? 0 : web.w;
   const tw = web === undefined ? 0 : web.t;
+  const [ixx, n, s] = inertiaBeamIE(hw, tw, wbf, tbf);
   const areaFB = wbf * tbf;
   const areaWeb = hw * tw;
   const areaBeam = 2 * areaFB + areaWeb;
@@ -16,18 +17,25 @@ const BeamIEResults = ({ beamIEProperties }) => {
   const flangeWeight = (((2 * areaFB) / 1000000) * steel).toFixed(2);
   const webWeight = ((areaWeb / 1000000) * steel).toFixed(2);
 
-  flange && inertiaBeamIE(hw, tw, wbf, tbf);
+  // let ixx = 0;
+  // flange && (ixx = inertiaBeamIE(hw, tw, wbf, tbf));
+
   return (
     <div className={styles.containerResults}>
       <div>
         <h2>Results</h2>
       </div>
       <div className={styles.containerResults}>
-        <p>Cross-Section Area (mm2) = {areaBeam.toFixed(0)}</p>
-        <p>Cross-Section Area (m2) = {(areaBeam / 1000000).toFixed(8)}</p>
-        <p>Total Weight (kg/m) = {totalWeight}</p>
+        <p>Cross-Section Area = {areaBeam.toFixed(0)} mm2</p>
+        <p>Cross-Section Area = {(areaBeam / 1000000).toFixed(8)} m2</p>
+        {flange ? <p>Ix = {ixx.toFixed(0)} mm4</p> : <p>Ix= 0 mm4</p>}
+        {flange ? <p>Ix = {(ixx / 10000).toFixed(0)} cm4</p> : <p>Ix= 0 cm4</p>}
+        {flange ? <p>ny = {n.toFixed(0)} mm</p> : <p>ny= 0 mm</p>}
+        {flange ? <p>Sx = {(s / 1000).toFixed(0)} cm3</p> : <p>S= 0 cm3</p>}
+
+        <p>Total Weight = {totalWeight} kg/m</p>
         <p>
-          Flange Weight (kg/m) = {flangeWeight}
+          Flange Weight = {flangeWeight} kg/m
           {' = '}
           {flange === undefined
             ? 0
@@ -35,14 +43,12 @@ const BeamIEResults = ({ beamIEProperties }) => {
           %
         </p>
         <p>
-          Web Weight (kg/m) = {webWeight}
+          Web Weight = {webWeight} kg/m
           {' = '}
           {web === undefined ? 0 : ((webWeight / totalWeight) * 100).toFixed(2)}
           %{' '}
         </p>
-
         <h2>Sheet 2440mm Waste</h2>
-
         {flange === undefined ? (
           ''
         ) : (
