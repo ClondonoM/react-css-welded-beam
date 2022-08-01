@@ -1,4 +1,4 @@
-import inertiaBeamB from '../inertia/inertiaBeamB';
+import inertiaBeamB from '../../helpers/inertiaBeamB';
 import styles from './beamResults.module.css';
 import SheetWasteB from './SheetWasteB';
 
@@ -11,9 +11,6 @@ const BeamBResults = ({ beamBProperties }) => {
   const tbf = flange === undefined ? 0 : flange.t;
   const hw = web === undefined ? 0 : web.w;
   const tw = web === undefined ? 0 : web.t;
-
-  // const areaFlange = flange === undefined ? 0 : 2 * flange.w * flange.t;
-  // const areaWeb = web === undefined ? 0 : 2 * web.w * web.t;
   const [areaFlange, areaWeb, areaBeam, ixx, n, s, qsv, e] = inertiaBeamB(
     yiedlS,
     fyElectrode,
@@ -23,7 +20,6 @@ const BeamBResults = ({ beamBProperties }) => {
     tbf
   );
 
-  // const areaBeam = areaFlange + areaWeb;
   const totalWeight = ((areaBeam / 1000000) * steel).toFixed(2);
   const flangeWeight = ((areaFlange / 1000000) * steel).toFixed(2);
   const webWeight = ((areaWeb / 1000000) * steel).toFixed(2);

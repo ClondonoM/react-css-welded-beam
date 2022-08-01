@@ -1,5 +1,6 @@
 const inertiaBeamB = (fy, fexx, hw, tw, fw, ft) => {
   const arrAreaBeam = [fw * ft, 2 * hw * tw, fw * ft];
+
   const areaBeam = arrAreaBeam.reduce((a, b) => a + b, 0);
   const arrY = [ft / 2, hw / 2 + ft, ft / 2 + ft + hw];
   const arrM = arrAreaBeam.map((item, i) => item * arrY[i]);
@@ -33,6 +34,15 @@ const inertiaBeamB = (fy, fexx, hw, tw, fw, ft) => {
   }
   const eDef = Math.max(Math.ceil(e), emin);
 
-  return [arrAreaBeam[0], arrAreaBeam[1], areaBeam, inertia, n, s, qsv, eDef];
+  return [
+    arrAreaBeam[0] * 2,
+    arrAreaBeam[1],
+    areaBeam,
+    inertia,
+    n,
+    s,
+    qsv,
+    eDef,
+  ];
 };
 export default inertiaBeamB;
