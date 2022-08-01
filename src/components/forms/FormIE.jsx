@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from './form.module.css';
 
 const FormIE = ({ setBeamIEProperties }) => {
-  const [fy, setFy] = useState(352);
+  const [fy, setFy] = useState(345);
   const [fexx, setFexx] = useState(490);
   const [h, setH] = useState(400);
   const [tw, setTw] = useState(9);
