@@ -25,7 +25,7 @@ const FormIE = ({ setBeamIEProperties }) => {
     <div>
       <form onSubmit={handleSubmit}>
         <div className={styles.formInput}>
-          <label htmlFor='fy'>Yield Stress Fy (N/mm2)</label>
+          <label htmlFor='fy'>Yield Stress Fy (N/mm²)</label>
           <input
             type='number'
             value={fy}
@@ -33,7 +33,7 @@ const FormIE = ({ setBeamIEProperties }) => {
           />{' '}
         </div>
         <div className={styles.formInput}>
-          <label htmlFor='fexx'>Electrode Stress Fexx (N/mm2)</label>
+          <label htmlFor='fexx'>Electrode Stress Fexx (N/mm²)</label>
           <input
             type='number'
             value={fexx}
