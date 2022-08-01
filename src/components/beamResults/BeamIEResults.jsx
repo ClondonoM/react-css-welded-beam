@@ -1,6 +1,6 @@
 import styles from './beamResults.module.css';
 import SheetWasteIE from './SheetWasteIE';
-import inertiaBeamIE from '../inertia/inertiaBeamIE';
+import inertiaBeamIE from '../../helpers/inertiaBeamIE';
 
 const BeamIEResults = ({ beamIEProperties }) => {
   const steel = 7850;
