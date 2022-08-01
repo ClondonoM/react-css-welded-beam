@@ -21,14 +21,7 @@ function App() {
         <BeamIEData setBeamIEProperties={setBeamIEProperties} />
         <BeamIEResults beamIEProperties={beamIEProperties} />
       </div>
-      <hr />
-      <div className={styles.header}>
-        <h1>Welded Plate Girder</h1>
-      </div>
-      <div className={styles.container}>
-        <BeamIData setBeamIProperties={setBeamIProperties} />
-        <BeamIResults beamIProperties={beamIProperties} />
-      </div>
+
       <hr />
       <div className={styles.header}>
         <h1>Welded Box Girder</h1>
@@ -37,6 +30,16 @@ function App() {
         <BeamBData setBeamBProperties={setBeamBProperties} />
         <BeamBResults beamBProperties={beamBProperties} />
       </div>
+
+      <hr />
+      <div className={styles.header}>
+        <h1>Welded Plate Girder</h1>
+      </div>
+      <div className={styles.container}>
+        <BeamIData setBeamIProperties={setBeamIProperties} />
+        <BeamIResults beamIProperties={beamIProperties} />
+      </div>
+
       <div className={styles.footer}>
         <a href='https://carlos-londono.dev/' target='_blank' rel='noreferrer'>
           by <span>carlos-londono.dev</span>
