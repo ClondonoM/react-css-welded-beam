@@ -2,6 +2,8 @@ import { useState } from 'react';
 import styles from './form.module.css';
 
 const FormI = ({ setBeamIProperties }) => {
+  const [fy, setFy] = useState(345);
+  const [fexx, setFexx] = useState(490);
   const [h, setH] = useState(400);
   const [tw, setTw] = useState(9);
   const [tfw, setTfw] = useState(150);
@@ -12,6 +14,8 @@ const FormI = ({ setBeamIProperties }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const beam = {
+      fy,
+      fexx,
       topF: { w: tfw, t: tft },
       web: { w: h - tft - bft, t: tw },
       botF: { w: bfw, t: bft },
@@ -23,6 +27,22 @@ const FormI = ({ setBeamIProperties }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+        <div className={styles.formInput}>
+          <label htmlFor='fy'>Yield Stress Fy (N/mm²)</label>
+          <input
+            type='number'
+            value={fy}
+            onChange={(e) => setFy(e.target.value * 1)}
+          />{' '}
+        </div>
+        <div className={styles.formInput}>
+          <label htmlFor='fexx'>Electrode Stress Fexx (N/mm²)</label>
+          <input
+            type='number'
+            value={fexx}
+            onChange={(e) => setFexx(e.target.value * 1)}
+          />{' '}
+        </div>
         <div className={styles.formInput}>
           <label htmlFor='h'>Beam heigth (h) (mm) </label>
           <input
