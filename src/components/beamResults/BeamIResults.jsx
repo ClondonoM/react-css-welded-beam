@@ -35,9 +35,9 @@ const BeamIResults = ({ beamIProperties }) => {
         {topF ? <p>ny = {n.toFixed(0)} mm</p> : <p>ny = 0 mm</p>}
         {topF ? <p>Sx = {(s / 1000).toFixed(0)} cm³</p> : <p>S = 0 cm³</p>}
 
-        <p>Total Weight (kg/m) = {totalWeight}</p>
+        <p>Total Weight = {totalWeight} kg/m</p>
         <p>
-          Top Flange Weight (kg/m) = {topFWeight}
+          Top Flange Weight = {topFWeight} kg/m
           {' = '}
           {topF === undefined
             ? 0
@@ -45,13 +45,13 @@ const BeamIResults = ({ beamIProperties }) => {
           %
         </p>
         <p>
-          Web Weight (kg/m) = {webWeight}
+          Web Weight = {webWeight} kg/m
           {' = '}
           {web === undefined ? 0 : ((webWeight / totalWeight) * 100).toFixed(2)}
           %{' '}
         </p>
         <p>
-          Bottom Flange Weight (kg/m) = {botFWeight}
+          Bottom Flange Weight = {botFWeight} kg/m
           {' = '}
           {botF === undefined
             ? 0
